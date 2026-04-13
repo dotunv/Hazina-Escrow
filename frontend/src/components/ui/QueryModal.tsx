@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   X, Copy, Check, ExternalLink, Loader2, Sparkles,
   ShieldCheck, AlertCircle, ChevronRight, Zap
@@ -6,6 +6,14 @@ import {
 import { api, DatasetMeta, QueryResult } from '../../lib/api';
 import { formatUSDC, getTypeMeta, truncateAddress } from '../../lib/utils';
 import clsx from 'clsx';
+
+const VERIFYING_STAGES = [
+  'Checking Stellar blockchain…',
+  'Simulating payment on Stellar testnet…',
+  'Calling Claude AI…',
+  'Generating AI analysis…',
+  'Preparing your results…',
+];
 
 type Step = 'details' | 'payment' | 'verifying' | 'result' | 'error';
 
@@ -25,7 +33,9 @@ export default function QueryModal({ dataset, onClose, onSuccess }: Props) {
   const [result, setResult] = useState<QueryResult | null>(null);
   const [error, setError] = useState('');
   const [copied, setCopied] = useState<string | null>(null);
-  const [useDemoMode, setUseDemoMode] = useState(false);
+  const [useDemoMode, setUseDemoMode] = useState(true);
+  const [verifyStage, setVerifyStage] = useState(0);
+  const verifyTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const typeMeta = getTypeMeta(dataset.type);
 
@@ -46,7 +56,12 @@ export default function QueryModal({ dataset, onClose, onSuccess }: Props) {
 
   const handleVerify = async () => {
     if (!txHash.trim() && !useDemoMode) return;
+    setVerifyStage(0);
     setStep('verifying');
+    // Cycle through stage labels while waiting
+    verifyTimerRef.current = setInterval(() => {
+      setVerifyStage((s) => Math.min(s + 1, VERIFYING_STAGES.length - 1));
+    }, 1800);
     try {
       let res: QueryResult;
       if (useDemoMode) {
@@ -54,6 +69,7 @@ export default function QueryModal({ dataset, onClose, onSuccess }: Props) {
       } else {
         res = await api.verifyPayment(dataset.id, txHash.trim(), buyerQuestion);
       }
+      clearInterval(verifyTimerRef.current!);
       setResult(res);
       setStep('result');
       onSuccess({
@@ -62,6 +78,7 @@ export default function QueryModal({ dataset, onClose, onSuccess }: Props) {
         totalEarned: dataset.totalEarned + dataset.pricePerQuery * 0.95,
       });
     } catch (err: unknown) {
+      clearInterval(verifyTimerRef.current!);
       setError(err instanceof Error ? err.message : 'Verification failed');
       setStep('error');
     }
@@ -303,11 +320,22 @@ export default function QueryModal({ dataset, onClose, onSuccess }: Props) {
                 <div className="absolute inset-0 rounded-full border-2 border-gold/10 animate-ping" />
               </div>
               <h3 className="font-display font-semibold text-xl text-foreground mb-2">
-                Verifying Payment
+                {useDemoMode ? 'Running Demo' : 'Verifying Payment'}
               </h3>
-              <p className="text-sm text-foreground-muted font-body">
-                Checking Stellar blockchain & generating AI analysis...
+              <p className="text-sm text-foreground-muted font-body transition-all duration-500">
+                {VERIFYING_STAGES[verifyStage]}
               </p>
+              <div className="flex justify-center gap-1.5 mt-4">
+                {VERIFYING_STAGES.map((_, i) => (
+                  <div
+                    key={i}
+                    className={clsx(
+                      'h-1 rounded-full transition-all duration-500',
+                      i === verifyStage ? 'w-6 bg-gold' : i < verifyStage ? 'w-2 bg-gold/40' : 'w-2 bg-border'
+                    )}
+                  />
+                ))}
+              </div>
             </div>
           )}
 

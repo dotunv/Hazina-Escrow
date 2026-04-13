@@ -289,20 +289,65 @@ export default function AgentPage() {
 
             {/* Payment trail */}
             <div className="glass-card p-6">
-              <h3 className="font-display font-semibold text-foreground mb-4">Payment Trail</h3>
-              <div className="space-y-2 mb-4">
-                {result.payments.sellerPayments.map((p) => (
-                  <div key={p.txHash} className="flex items-center justify-between text-sm font-body">
-                    <span className="text-foreground-muted">{p.seller}</span>
-                    <span className="text-foreground font-medium">{p.amount} USDC</span>
-                  </div>
-                ))}
+              <div className="flex items-center gap-2 mb-4">
+                <DollarSign className="w-5 h-5 text-gold" />
+                <h3 className="font-display font-semibold text-foreground">Payment Trail</h3>
+                <span className="ml-auto px-2 py-0.5 rounded-full text-xs font-body bg-amber-400/10 text-amber-400 border border-amber-400/20">
+                  x402 Protocol
+                </span>
               </div>
-              <div className="border-t border-border/40 pt-3 flex items-center justify-between text-sm font-body">
-                <span className="text-foreground-muted">Agent profit</span>
-                <span className="text-gold font-semibold">{result.payments.agentProfit} USDC</span>
+
+              <div className="space-y-3 mb-4">
+                {result.payments.sellerPayments.map((p) => {
+                  const typeColors: Record<string, string> = {
+                    'yield-data': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+                    'whale-wallets': 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+                    'risk-scores': 'bg-red-500/10 text-red-400 border-red-500/20',
+                    'sentiment': 'bg-purple-500/10 text-purple-400 border-purple-500/20',
+                  };
+                  const badgeClass = typeColors[p.type] || 'bg-surface-2 text-foreground-muted border-border';
+                  return (
+                    <div key={p.txHash} className="flex items-center gap-3 p-3 rounded-xl bg-surface-2/40 border border-border/30">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className={clsx('px-2 py-0.5 rounded-md text-[10px] font-body font-semibold border', badgeClass)}>
+                            {p.type.replace('-', ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}
+                          </span>
+                          {!p.onChain && (
+                            <span className="px-1.5 py-0.5 rounded text-[10px] font-body bg-amber-400/10 text-amber-400">simulated</span>
+                          )}
+                        </div>
+                        <p className="text-sm font-body text-foreground truncate">{p.seller}</p>
+                        <p className="text-[10px] font-mono text-muted truncate">{p.txHash}</p>
+                      </div>
+                      <p className="text-sm font-display font-bold text-gold flex-shrink-0">{p.amount} USDC</p>
+                    </div>
+                  );
+                })}
               </div>
-              <p className="text-xs font-body text-foreground-muted mt-3">{result.payments.note}</p>
+
+              {/* Totals */}
+              <div className="border-t border-border/40 pt-3 space-y-2">
+                <div className="flex items-center justify-between text-sm font-body">
+                  <span className="text-foreground-muted">Total spent on data</span>
+                  <span className="text-foreground font-medium">{result.payments.totalSpent} USDC</span>
+                </div>
+                <div className="flex items-center justify-between text-sm font-body">
+                  <span className="text-foreground-muted">Agent profit</span>
+                  <span className="text-gold font-semibold">{result.payments.agentProfit} USDC</span>
+                </div>
+                <div className="flex items-center justify-between text-sm font-body">
+                  <span className="text-foreground-muted">You paid</span>
+                  <span className="text-foreground font-bold">{result.payments.humanPaid} {result.payments.currency}</span>
+                </div>
+              </div>
+
+              {result.payments.note && (
+                <div className="flex items-center gap-2 mt-3 p-2.5 rounded-lg bg-amber-400/5 border border-amber-400/15">
+                  <ShieldCheck className="w-3.5 h-3.5 text-amber-400 flex-shrink-0" />
+                  <p className="text-xs font-body text-amber-400">{result.payments.note}</p>
+                </div>
+              )}
             </div>
           </div>
         )}

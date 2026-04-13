@@ -6,7 +6,7 @@
       "description": "Real-time on-chain movement data tracking the top 100 whale wallets across Ethereum and Solana. Includes entry/exit positions, token concentrations, and cross-chain bridge activity.",
       "type": "whale-wallets",
       "pricePerQuery": 0.05,
-      "sellerWallet": "GBVNKDPGVZGFKGRHDUBSZ5V7PXY6PJRFYF5RYVBKAHV3BUXHQWCFXBZ",
+      "sellerWallet": "GB37MSLKM5YARSLRYJOQVDE2Z2QLFM4B3UGH6AK7D47M3FJ4SRMCQVKL",
       "data": {
         "wallets": [
           {
@@ -134,8 +134,8 @@
           "avg_hold_time_days": 127.4
         }
       },
-      "queriesServed": 56,
-      "totalEarned": 2.7775,
+      "queriesServed": 60,
+      "totalEarned": 2.9675,
       "createdAt": "2026-04-01T00:00:00Z"
     },
     {
@@ -144,7 +144,7 @@
       "description": "Live arbitrage opportunities detected across Uniswap, Curve, Balancer and PancakeSwap. Includes profit margins, gas costs, and execution windows for each signal.",
       "type": "trading-signals",
       "pricePerQuery": 0.1,
-      "sellerWallet": "GCEZWKCA5VLDNRLN3RPRJMRZOX3Z6G5CHCGGEWODYNTJXJUZT9AED4MH",
+      "sellerWallet": "GA62DGF2H7OP7IMGIX6USQXBTNUZKKJLHETDJDTSJP357LQH33YP2W3D",
       "data": {
         "signals": [
           {
@@ -240,8 +240,8 @@
           "busiest_dex": "Uniswap V3"
         }
       },
-      "queriesServed": 83,
-      "totalEarned": 8.3,
+      "queriesServed": 84,
+      "totalEarned": 8.395,
       "createdAt": "2026-04-05T00:00:00Z"
     },
     {
@@ -250,7 +250,7 @@
       "description": "Comprehensive APY snapshot across 20+ DeFi protocols including Aave, Compound, Curve, Yearn and emerging protocols. Sorted by risk-adjusted returns.",
       "type": "yield-data",
       "pricePerQuery": 0.02,
-      "sellerWallet": "GDQVRA4RTMMFKFMTQ2LFPQDUMYXHBHKBYBDFB8WNRQR6F4NCVHNPTPZ",
+      "sellerWallet": "GD4GDOPE76KPE7IWGKH2JSFONJXP3VAIW63MKNVMYTG3KG7JESCVTYQ6",
       "data": {
         "yields": [
           {
@@ -397,8 +397,8 @@
           "highest_apy_protocol": "Beefy Finance"
         }
       },
-      "queriesServed": 213,
-      "totalEarned": 4.251,
+      "queriesServed": 231,
+      "totalEarned": 4.593,
       "createdAt": "2026-04-03T00:00:00Z"
     },
     {
@@ -407,7 +407,7 @@
       "description": "AI-generated risk scores for the top 500 most active DeFi wallets. Scores based on liquidation history, protocol exposure, leverage ratios, and cross-chain activity.",
       "type": "risk-scores",
       "pricePerQuery": 0.03,
-      "sellerWallet": "GBCJBJT3ZK6NJOCWJ5GKBHG6XUPJKBDRGN2HMVBHHZB3MXVV4F7XNKM",
+      "sellerWallet": "GBMVCBYWG4DZTN3SQ7VTHSLEJZG3JI5V2QHNWQN3SQ7O324WBKI3AGC4",
       "data": {
         "scores": [
           {
@@ -510,8 +510,8 @@
           "scored_at": "2026-04-08T06:00:00Z"
         }
       },
-      "queriesServed": 165,
-      "totalEarned": 4.9365,
+      "queriesServed": 171,
+      "totalEarned": 5.1075,
       "createdAt": "2026-04-02T00:00:00Z"
     },
     {
@@ -520,7 +520,7 @@
       "description": "Comprehensive floor price tracking for top 50 NFT collections over the last 7 days. Includes volume, holder counts, wash trading flags, and momentum scores.",
       "type": "nft-data",
       "pricePerQuery": 0.02,
-      "sellerWallet": "GC4ATKYF6C66DSWN6QNBZKZ2MOZDKJMEA252ZDP74TRYOQ57YJJKFKW",
+      "sellerWallet": "GCDDN2PNSMNAGUF6IN7W4EGR66TNH3EGFOSW7UQLM7LNCAFN7DL56PUH",
       "data": {
         "collections": [
           {
@@ -642,7 +642,7 @@
       "description": "AI-aggregated sentiment scores from Twitter/X, Reddit, Telegram and Discord for top 30 crypto assets. Updated every 4 hours with momentum and fear/greed indicators.",
       "type": "sentiment",
       "pricePerQuery": 0.04,
-      "sellerWallet": "GBNKBP73TVFMBR6IQNZGQJZGQNSGHRQ7SL4BWILMMBZIMXHBZFJ4YKOH",
+      "sellerWallet": "GC42G7GQZW6S4AFTBOPETGY3AVMMWBTKJLPRMSPHHOEOWWTPSIIULXI5",
       "data": {
         "sentiments": [
           {
@@ -771,9 +771,49 @@
           ]
         }
       },
-      "queriesServed": 143,
-      "totalEarned": 5.702,
+      "queriesServed": 158,
+      "totalEarned": 6.272,
       "createdAt": "2026-04-06T00:00:00Z"
+    },
+    {
+      "id": "ds-4d0e57b9-5616-424f-b80e-0a6d8857e9ca",
+      "name": "ETH Whale Activity — April 2026",
+      "description": "Whale Wallets",
+      "type": "whale-wallets",
+      "pricePerQuery": 0.05,
+      "sellerWallet": "GDC2RYWLBQY5NDGSPVA6OLYZKNF7SOLRJRTH7AWZGZ2SXMUPNTFZJI5X",
+      "data": {
+        "wallets": [
+          {
+            "address": "0xd8dA6B",
+            "balance": 244812,
+            "lastActive": "2026-04-13"
+          }
+        ]
+      },
+      "queriesServed": 0,
+      "totalEarned": 0,
+      "createdAt": "2026-04-13T15:36:02.209Z"
+    },
+    {
+      "id": "ds-b045a296-02d7-452d-a6bb-5532aa4642b3",
+      "name": "ETH Whale Activities around April 2026",
+      "description": "Top 20 ETH wak]le wallets with transfer volumes",
+      "type": "whale-wallets",
+      "pricePerQuery": 0.05,
+      "sellerWallet": "GDC2RYWLBQY5NDGSPVA6OLYZKNF7SOLRJRTH7AWZGZ2SXMUPNTFZJI5X",
+      "data": {
+        "wallets": [
+          {
+            "address": "0xd8dA6B",
+            "balance": 244812,
+            "lastActive": "2026-04-13"
+          }
+        ]
+      },
+      "queriesServed": 0,
+      "totalEarned": 0,
+      "createdAt": "2026-04-13T16:58:23.027Z"
     }
   ],
   "transactions": [
@@ -1115,6 +1155,422 @@
       "buyerQuery": "Best low risk USDC yield with $500 budget",
       "aiSummary": "Synthesising all four datasets: the yield data identifies three genuinely low-risk USDC opportunities — Aave V3 Ethereum (5.82%), Morpho Blue (6.42%), and Aave V3 Arbitrum (6.91%) — all carrying explicit low-risk labels and multi-billion dollar TVL. Yearn Finance offers 7.34% but is rated medium risk, disqualifying it for this user. Whale movement data shows accumulation of ETH, USDC, and AAVE governance tokens by the lowest-risk wallets (scores 15-24), while high-risk wallets (scores 71-88) are distributing or chasing speculative assets like PEPE and SHIB — this behavioural divergence strongly validates a conservative stablecoin lending posture. The risk score dataset confirms the most trustworthy whale cohort (0x8894E0 at score 24, 0xBE0eB5 at score 15) is holding USDC and blue-chip assets, not rotating into high-yield farms. Market sentiment shows Ethereum at 68 (Greed) with a bullish trend and +5.2% 24h move, which supports healthy DeFi utilisation rates that drive up lending APYs on Aave — a direct tailwind for the recommended position. The AAVE token itself is trending up with neutral-to-positive sentiment, suggesting the protocol's governance and risk parameters are viewed favourably by the market. No critical red flags exist for the top pick; the primary practical concern for a $500 budget is Ethereum gas optimisation, which the Arbitrum alternative resolves.",
       "timestamp": "2026-04-13T00:13:35.409Z"
+    },
+    {
+      "id": "tx-demo-3599857f-c943-4f15-97e2-23870c1e206b",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776086425943",
+      "amount": 0.02,
+      "buyerQuery": "what is the highest APY protocol?",
+      "aiSummary": "## Executive Summary\n\nThe dataset reveals a clear risk-return pattern across DeFi protocols, with yields ranging from 3.72% (Rocket Pool) to 24.8% (Beefy Finance), where higher APYs consistently correlate with elevated risk profiles. Lido dominates the ecosystem with $24.7B TVL despite offering only 3.98% APY, demonstrating strong preference for low-risk staking, while Ethereum remains the primary chain with $42.6B of the total TVL. High-yield opportunities above 12% APY are concentrated in smaller protocols with medium-to-high risk ratings and significantly lower TVL, indicating limited institutional adoption of these strategies.\n\n## Answer to Buyer's Question\n\n**The highest APY protocol is Beefy Finance at 24.8% APY.** This is a high-risk vault strategy on BNB Chain involving CAKE-BNB assets with a relatively modest TVL of $180M. It's worth noting that this exceptional yield comes with high risk classification and operates on a smaller scale compared to the major Ethereum protocols in your dataset.",
+      "timestamp": "2026-04-13T13:20:25.943Z"
+    },
+    {
+      "id": "tx-agent-3c44757f-6431-40c3-bf42-efce90beaa9c",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-yield-data-1776086980102",
+      "amount": 0.02,
+      "buyerQuery": "[Agent Job job-16d6ed26-b39c-45a3-9a73-ccca864be1b0] safe USDC yield for $200",
+      "timestamp": "2026-04-13T13:29:40.103Z"
+    },
+    {
+      "id": "tx-agent-34cf6ebd-0bfe-44cb-8d1e-a3f60a4dc9c5",
+      "datasetId": "ds-001-whale-wallets",
+      "txHash": "demo-whale-wallets-1776086980105",
+      "amount": 0.05,
+      "buyerQuery": "[Agent Job job-16d6ed26-b39c-45a3-9a73-ccca864be1b0] safe USDC yield for $200",
+      "timestamp": "2026-04-13T13:29:40.106Z"
+    },
+    {
+      "id": "tx-agent-297f2ccf-da0c-4f03-99c4-0df7dcaed01d",
+      "datasetId": "ds-004-wallet-risk",
+      "txHash": "demo-risk-scores-1776086980107",
+      "amount": 0.03,
+      "buyerQuery": "[Agent Job job-16d6ed26-b39c-45a3-9a73-ccca864be1b0] safe USDC yield for $200",
+      "timestamp": "2026-04-13T13:29:40.108Z"
+    },
+    {
+      "id": "tx-agent-b62902c3-e01b-4b04-82fa-6d01fd0bf61b",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-sentiment-1776086980108",
+      "amount": 0.04,
+      "buyerQuery": "[Agent Job job-16d6ed26-b39c-45a3-9a73-ccca864be1b0] safe USDC yield for $200",
+      "timestamp": "2026-04-13T13:29:40.109Z"
+    },
+    {
+      "id": "tx-agent-job-job-16d6ed26-b39c-45a3-9a73-ccca864be1b0",
+      "datasetId": "agent-job",
+      "txHash": "demo-agent-1776086980100",
+      "amount": 1,
+      "buyerQuery": "safe USDC yield for $200",
+      "aiSummary": "Synthesising all four datasets, the risk-adjusted optimum for a $200 low-risk USDC position is Aave V3 on Ethereum. From Dataset 1, filtering strictly for USDC-denominated, low-risk protocols eliminates Yearn (medium), Convex (medium/high), GMX (high), Radiant (high), Stargate (medium), and Beefy (high), leaving Aave V3 Ethereum (5.82%), Compound V3 (5.24%), Morpho Blue (6.42%), and Curve 3pool (4.18%). Morpho Blue's 6.42% is nominally higher, but Aave V3's $8.42B TVL dwarfs Morpho's $1.84B, offering materially superior liquidity and exit depth for any market stress event. From Dataset 2, whale accumulation patterns favour the Aave ecosystem directly: wallet 0x6262998 is accumulating MKR and AAVE simultaneously, suggesting sophisticated capital is rotating into blue-chip DeFi lending governance. No whale wallets show USDC distribution that would signal a flight from stablecoin lending. Dataset 3 risk scores reinforce this: the two wallets most actively accumulating in Aave-adjacent tokens (0x8894E0 and 0x6262998) have risk scores of 24 and 44 respectively — Very Low and Medium — indicating disciplined, non-leveraged behaviour consistent with yield-farming rather than speculative punting. The one Critical-risk wallet (0xF977814, score 88) is distributing, not accumulating, and holds no USDC-linked tokens. Dataset 4 sentiment is constructively bullish for Ethereum (score 68, Greed, +5.2% 24h) and AAVE specifically sits at 58 with an upward trend, suggesting the protocol is not under negative narrative pressure. The broader Fear & Greed Index of 71 warrants a mild caution flag but does not contradict a stablecoin lending position whose principal is not exposed to ETH price risk. Taken together, Aave V3 USDC on Ethereum is the highest-confidence, lowest-risk yield option available within the user's budget and tolerance parameters.",
+      "timestamp": "2026-04-13T13:30:12.374Z"
+    },
+    {
+      "id": "tx-demo-80fb7e55-58cd-4a33-8749-4e0efa48dc36",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776094201094",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T15:30:01.094Z"
+    },
+    {
+      "id": "tx-demo-3007283a-22f8-46c8-b86d-b88dd7fb3210",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776094224177",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T15:30:24.177Z"
+    },
+    {
+      "id": "tx-demo-1ce4d288-661c-4ba5-8343-e16051c4a338",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776094237409",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T15:30:37.409Z"
+    },
+    {
+      "id": "tx-demo-b19b82b8-73e4-413f-ae78-7d5f187ee1c1",
+      "datasetId": "ds-002-dex-arb",
+      "txHash": "demo-1776094254306",
+      "amount": 0.1,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T15:30:54.306Z"
+    },
+    {
+      "id": "tx-agent-e132eac8-2e9e-495d-b041-c0716d2f9b0b",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-yield-data-1776094342733",
+      "amount": 0.02,
+      "buyerQuery": "[Agent Job job-542f3948-f3b4-44ea-9163-12adf3122888] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T15:32:22.735Z"
+    },
+    {
+      "id": "tx-agent-2b60dfde-9e12-441d-acb3-60453d45627a",
+      "datasetId": "ds-001-whale-wallets",
+      "txHash": "demo-whale-wallets-1776094342737",
+      "amount": 0.05,
+      "buyerQuery": "[Agent Job job-542f3948-f3b4-44ea-9163-12adf3122888] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T15:32:22.739Z"
+    },
+    {
+      "id": "tx-agent-7a3ee161-fc6a-4d2e-9acf-264bdd3c4cd4",
+      "datasetId": "ds-004-wallet-risk",
+      "txHash": "demo-risk-scores-1776094342740",
+      "amount": 0.03,
+      "buyerQuery": "[Agent Job job-542f3948-f3b4-44ea-9163-12adf3122888] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T15:32:22.741Z"
+    },
+    {
+      "id": "tx-agent-2ac25870-e090-4a85-a9c0-246eaa5cf438",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-sentiment-1776094342743",
+      "amount": 0.04,
+      "buyerQuery": "[Agent Job job-542f3948-f3b4-44ea-9163-12adf3122888] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T15:32:22.743Z"
+    },
+    {
+      "id": "tx-agent-job-job-542f3948-f3b4-44ea-9163-12adf3122888",
+      "datasetId": "agent-job",
+      "txHash": "demo-agent-1776094342730",
+      "amount": 1,
+      "buyerQuery": "Best low risk USDC yield with $500 budget",
+      "aiSummary": "Synthesising all four datasets: the yield data identifies three low-risk USDC lending options on Ethereum — Aave V3 (5.82%), Morpho Blue (6.42%), and Compound V3 (5.24%) — with Aave V3 standing out for its dominant $8.42B TVL providing deep liquidity protection for small depositors. Whale movement data shows smart money accumulating AAVE governance tokens (wallet 0x6262998, +920.7 ETH net inflow) and holding stablecoins like USDT and DAI (wallet 0xBE0eB5, risk score 15 — Very Low, zero liquidations), suggesting institutional confidence in the Aave ecosystem and stablecoin strategies. Risk score data confirms the safest whale behaviour clusters around low-leverage, low-liquidation wallets operating within 3–9 protocols — consistent with the conservative lending profile of Aave V3. Market sentiment shows AAVE at 58/100 (Neutral, trending up +2.1%), Ethereum at 68/100 (Greed, +5.2%), and a market-wide Fear & Greed Index of 71, creating a constructive but not overheated environment for stablecoin yield. No red flags exist for the Aave V3 USDC pool specifically; the primary practical risk for this budget size is Ethereum gas cost erosion, which can be sidestepped via the Arbitrum alternative if the user plans a shorter holding period.",
+      "timestamp": "2026-04-13T15:32:49.388Z"
+    },
+    {
+      "id": "tx-demo-3ae1a42c-d43b-4346-839e-98e974c657a6",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776094840732",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Based on the analyzed DeFi yield dataset, Ethereum dominates the market with $45.8B in total TVL across major protocols, led by Lido's $24.7B stETH staking pool, while alternative chains like Arbitrum show significantly smaller but potentially more attractive opportunities. The yield landscape reveals a clear risk-return correlation, with low-risk stablecoin lending on Ethereum averaging 5.8% APY (Aave V3, Compound V3, Morpho Blue), while high-risk protocols offer substantially higher returns including Beefy Finance at 24.8% APY and GMX's GLP at 18.24% APY. A notable anomaly exists in Arbitrum's lending market where Radiant Capital offers 14.32% APY on USDC with only $280M TVL, suggesting either elevated risk factors or potential market inefficiency compared to Ethereum's established lending protocols.",
+      "timestamp": "2026-04-13T15:40:40.732Z"
+    },
+    {
+      "id": "tx-demo-7d01247c-04ac-4d62-9be5-77a3320aa48c",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776096634086",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:10:34.086Z"
+    },
+    {
+      "id": "tx-demo-cafecf02-dd9f-4be6-a90d-adb6eaefd579",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776096639950",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:10:39.950Z"
+    },
+    {
+      "id": "tx-demo-53cc8084-0f57-4610-88c7-a656ddb4f75d",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776096645125",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:10:45.125Z"
+    },
+    {
+      "id": "tx-demo-ddff6da9-39a1-40c9-a8d8-acaf64b6e43a",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776096649249",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:10:49.249Z"
+    },
+    {
+      "id": "tx-demo-1b699e74-78e1-44c8-b422-08abd73aedcd",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776098371355",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:39:31.355Z"
+    },
+    {
+      "id": "tx-demo-7ea0afda-9576-468a-8782-17af5eb8c496",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098382807",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:39:42.807Z"
+    },
+    {
+      "id": "tx-demo-dd6799fc-dc57-4578-a0cc-511a2ab1151e",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098388604",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:39:48.604Z"
+    },
+    {
+      "id": "tx-demo-af8c2fe8-3d0e-4d62-87c7-8ec126dcd8ba",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098393747",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:39:53.747Z"
+    },
+    {
+      "id": "tx-demo-ca32fe1f-54c5-4fc2-bc9d-4b65e38d369b",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098400194",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:40:00.194Z"
+    },
+    {
+      "id": "tx-demo-79627426-0f79-4f93-9d0b-a2bd9d2c6ef9",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098405813",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:40:05.813Z"
+    },
+    {
+      "id": "tx-demo-ce1827bf-e78c-4e77-944b-88467ba434b4",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098484194",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:41:24.194Z"
+    },
+    {
+      "id": "tx-demo-52a47362-a6bf-45b8-bda8-979861035a39",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098589145",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:43:09.145Z"
+    },
+    {
+      "id": "tx-demo-5aeeb387-8a77-4602-b4b1-af9c59607334",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098624504",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:43:44.504Z"
+    },
+    {
+      "id": "tx-demo-6a934c51-33ff-4f85-beff-4481660c03c0",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098685594",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.",
+      "timestamp": "2026-04-13T16:44:45.594Z"
+    },
+    {
+      "id": "tx-demo-5208a575-08ed-45cf-a315-d160eda472e1",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098749470",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Executive Summary:\n\n1. The cryptocurrency market is in a state of \"Greed,\" with a Fear and Greed Index of 71, indicating heightened speculative activity. \n2. The top-performing assets are Pepe (PEPE) with a 28.4% 24-hour price change, followed by Solana (SOL) at 12.7% and Bitcoin (BTC) at 8.4%.\n3. Avalanche (AVAX) and Polygon (MATIC) are the only assets showing a bearish trend, with 24-hour price changes of -7.3% and -11.2%, respectively.",
+      "timestamp": "2026-04-13T16:45:49.470Z"
+    },
+    {
+      "id": "tx-demo-29212bd8-39dc-48f0-9294-3030967961fd",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776098796700",
+      "amount": 0.02,
+      "buyerQuery": "",
+      "aiSummary": "The Ethereum DeFi market continues to dominate, with Aave V3 and Lido together accounting for over $33 billion in total value locked (TVL). Stablecoin yields average 6.32% APY, while Ethereum-based assets yield 8.91% on average. The highest APY is 24.8% on the CAKE-BNB pool on Beefy Finance, a BNB Chain-based protocol, though this carries a \"high\" risk profile.",
+      "timestamp": "2026-04-13T16:46:36.700Z"
+    },
+    {
+      "id": "tx-demo-2cc69648-43f2-4820-bc78-4a99e65a84a0",
+      "datasetId": "ds-004-wallet-risk",
+      "txHash": "demo-1776098808148",
+      "amount": 0.03,
+      "buyerQuery": "",
+      "aiSummary": "Here is a concise 3-sentence executive summary highlighting the most important insights, notable trends, and any anomalies from the provided dataset:\n\nThe dataset includes risk scores, leverage ratios, and liquidation histories for 10 cryptocurrency wallets. Notable trends include a high-risk wallet with a risk score of 88, a leverage ratio of 8.4, and 7 liquidations, as well as a very low-risk wallet with a risk score of 15, a leverage ratio of 1, and no liquidations. According to the metadata, this data represents a subset of 500 wallets, with an average risk score of 48.7, 23 critical-risk wallets, and 87 high-risk wallets, analyzed using the HazAI-Risk-v2.1 model.",
+      "timestamp": "2026-04-13T16:46:48.148Z"
+    },
+    {
+      "id": "tx-demo-309cc721-a834-4a0b-91dd-506b81ba5d1c",
+      "datasetId": "ds-004-wallet-risk",
+      "txHash": "demo-1776098814257",
+      "amount": 0.03,
+      "buyerQuery": "",
+      "aiSummary": "Here is a concise 3-sentence executive summary of the key insights from the provided data:\n\nThe dataset includes risk scores for 10 wallets, with an average risk score of 48.7 across the 500 wallets scored. The highest risk wallet has a score of 88 and has experienced 7 liquidations, while the lowest risk wallets have scores of 15 and 24 with no liquidations. Additionally, the dataset indicates that 23 wallets are classified as \"Critical\" risk and 87 are \"High\" risk, suggesting a significant portion of the scored wallets carry elevated risk profiles.",
+      "timestamp": "2026-04-13T16:46:54.257Z"
+    },
+    {
+      "id": "tx-demo-3faaca07-544d-41bf-b83a-7a4a85c316f7",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-1776098822144",
+      "amount": 0.04,
+      "buyerQuery": "",
+      "aiSummary": "Executive Summary:\n\nThe data reveals a market sentiment dominated by \"Greed,\" with the Fear and Greed Index at 71. Bitcoin, Ethereum, and Solana lead the market, with sentiment scores of 72, 68, and 81, respectively, indicating \"Greed\" and \"Extreme Greed.\" Solana stands out with a 12.7% 24-hour price increase, the highest among the assets analyzed. Conversely, Avalanche and Polygon show \"Fear\" with negative 24-hour price changes of -7.3% and -11.2%, respectively. The meme token Pepe is the outlier, with an \"Extreme Greed\" sentiment score of 87 and a staggering 28.4% 24-hour price increase.",
+      "timestamp": "2026-04-13T16:47:02.144Z"
+    },
+    {
+      "id": "tx-agent-7171faf3-2014-4b3f-bcec-9ed74a16f98c",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-yield-data-1776099056101",
+      "amount": 0.02,
+      "buyerQuery": "[Agent Job job-626f6e0e-dc49-441f-828b-6dd5de4de771] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T16:50:56.105Z"
+    },
+    {
+      "id": "tx-agent-c064c747-1772-480a-aad2-259f199c8d38",
+      "datasetId": "ds-001-whale-wallets",
+      "txHash": "demo-whale-wallets-1776099056107",
+      "amount": 0.05,
+      "buyerQuery": "[Agent Job job-626f6e0e-dc49-441f-828b-6dd5de4de771] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T16:50:56.109Z"
+    },
+    {
+      "id": "tx-agent-f7764ec5-2e0b-4392-8eac-2524907020bc",
+      "datasetId": "ds-004-wallet-risk",
+      "txHash": "demo-risk-scores-1776099056111",
+      "amount": 0.03,
+      "buyerQuery": "[Agent Job job-626f6e0e-dc49-441f-828b-6dd5de4de771] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T16:50:56.112Z"
+    },
+    {
+      "id": "tx-agent-1d46caa4-be4e-4b1a-8a05-badfac32670c",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-sentiment-1776099056116",
+      "amount": 0.04,
+      "buyerQuery": "[Agent Job job-626f6e0e-dc49-441f-828b-6dd5de4de771] Best low risk USDC yield with $500 budget",
+      "timestamp": "2026-04-13T16:50:56.118Z"
+    },
+    {
+      "id": "tx-agent-job-job-626f6e0e-dc49-441f-828b-6dd5de4de771",
+      "datasetId": "agent-job",
+      "txHash": "demo-agent-1776099056093",
+      "amount": 1,
+      "buyerQuery": "Best low risk USDC yield with $500 budget",
+      "aiSummary": "The user's $500 USDC budget and low-risk tolerance are best suited for low-risk lending protocols on Ethereum, based on the data provided. Aave V3 USDC offers a 5.82% APY, which is in line with the average stablecoin yield of 6.32% across the protocols surveyed. The whale activity data shows strong accumulation of Ethereum and Aave positions, indicating confidence in these protocols. The market sentiment is also bullish on Ethereum and stablecoins. Compound V3 USDC and Morpho Blue USDC are viable alternatives that also offer low-risk, high-yield opportunities for the user's requirements.",
+      "timestamp": "2026-04-13T16:51:00.226Z"
+    },
+    {
+      "id": "tx-agent-60c7879d-c4cd-4b99-9808-b9d2f80fab71",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-yield-data-1776099377546",
+      "amount": 0.02,
+      "buyerQuery": "[Agent Job job-b03d4d61-ce99-4cc8-810b-f1c68992106e] Safe stablecoin pools on Ethereum, $1000 budget",
+      "timestamp": "2026-04-13T16:56:17.550Z"
+    },
+    {
+      "id": "tx-agent-56c150a5-1e88-4a8c-ac6d-404890cd4930",
+      "datasetId": "ds-001-whale-wallets",
+      "txHash": "demo-whale-wallets-1776099377552",
+      "amount": 0.05,
+      "buyerQuery": "[Agent Job job-b03d4d61-ce99-4cc8-810b-f1c68992106e] Safe stablecoin pools on Ethereum, $1000 budget",
+      "timestamp": "2026-04-13T16:56:17.555Z"
+    },
+    {
+      "id": "tx-agent-25537e64-6d11-4ad7-ba1a-48c481c7bf93",
+      "datasetId": "ds-004-wallet-risk",
+      "txHash": "demo-risk-scores-1776099377557",
+      "amount": 0.03,
+      "buyerQuery": "[Agent Job job-b03d4d61-ce99-4cc8-810b-f1c68992106e] Safe stablecoin pools on Ethereum, $1000 budget",
+      "timestamp": "2026-04-13T16:56:17.558Z"
+    },
+    {
+      "id": "tx-agent-d5558b18-2cbb-42de-aac0-52fc695a2edf",
+      "datasetId": "ds-006-sentiment",
+      "txHash": "demo-sentiment-1776099377560",
+      "amount": 0.04,
+      "buyerQuery": "[Agent Job job-b03d4d61-ce99-4cc8-810b-f1c68992106e] Safe stablecoin pools on Ethereum, $1000 budget",
+      "timestamp": "2026-04-13T16:56:17.561Z"
+    },
+    {
+      "id": "tx-agent-job-job-b03d4d61-ce99-4cc8-810b-f1c68992106e",
+      "datasetId": "agent-job",
+      "txHash": "demo-agent-1776099377541",
+      "amount": 1,
+      "buyerQuery": "Safe stablecoin pools on Ethereum, $1000 budget",
+      "aiSummary": "The yield data shows that the Aave V3 USDC lending pool offers the best combination of high APY (5.82%) and low risk for the user's $1000 USDC budget. This is supported by the whale wallet data, which indicates strong accumulation activity and capital inflows into this protocol, suggesting a high level of confidence. While market sentiment is neutral on USDC, the lending nature of this yield strategy makes it less susceptible to broader market fluctuations. The Curve 3pool and Morpho Blue USDC lending strategies present lower-yielding but still low-risk alternatives. Overall, the Aave V3 USDC lending pool emerges as the top opportunity that best matches the user's requirements.",
+      "timestamp": "2026-04-13T16:56:21.981Z"
+    },
+    {
+      "id": "tx-demo-71e3cb38-d33b-4ee0-bbc2-a11a60d70c0f",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776114452766",
+      "amount": 0.02,
+      "buyerQuery": "what is the best yield?",
+      "aiSummary": "Executive Summary:\n\nThe dataset provides insights into various decentralized finance (DeFi) protocols and their associated yields. It highlights that the highest yielding opportunities are in riskier strategies, such as Beefy Finance's 24.8% APY on the CAKE-BNB pool. However, more conservative options like Aave V3's 5.82% APY on USDC and Lido's 3.98% APY on stETH are also available for those seeking lower-risk investments.\n\nBest Yield:\n\nThe best yield in the dataset is 24.8% APY, offered by Beefy Finance on the CAKE-BNB pool. This is a significantly higher yield compared to the average APY for stablecoins (6.32%) and Ethereum-based assets (8.91%). However, it is also classified as a \"high\" risk investment, indicating that it may have higher volatility and potential downside risk compared to the lower-risk options in the dataset.",
+      "timestamp": "2026-04-13T21:07:32.766Z"
+    },
+    {
+      "id": "tx-demo-92839c8f-b514-4cbf-a156-e0b02c087bf1",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "demo-1776114939985",
+      "amount": 0.02,
+      "buyerQuery": "what is the best yield?",
+      "aiSummary": "# On-Chain Yield Analysis Report\n\n## Executive Summary\n\nThe dataset reveals a stark risk-return tradeoff across DeFi yield opportunities, with low-risk stablecoin yields clustering around 5.8% (Aave V3 leading at 5.82% APY with $8.4B TVL), while higher yields of 12-25% are concentrated in medium-to-high-risk protocols on alternative chains. Ethereum dominates by TVL ($44.6B across tracked protocols), but alternative chains like Arbitrum and BNB Chain offer significantly elevated yields—GMX on Arbitrum yields 18.24% and Beefy Finance on BNB Chain reaches 24.8%, though both carry high risk classifications. The data shows a clear efficiency frontier: investors seeking yield must either accept lower returns on battle-tested protocols or take on material smart contract and liquidation risks.\n\n---\n\n## Answer: What is the Best Yield?\n\n**The answer depends on your risk tolerance:**\n\n**Highest Raw Yield:** Beefy Finance (BNB Chain) at **24.8% APY** on CAKE-BNB, but this carries **high risk** with only $180M TVL.\n\n**Best Risk-Adjusted Yield for Stablecoins:** **Aave V3 on Ethereum at 5.82% APY** on USDC—it combines low risk with the highest TVL ($8.4B), making it the most liquid and battle-tested option.\n\n**Best Aggressive Yield:** **GMX on Arbitrum at 18.24% APY** on GLP with medium-to-high risk, or **Radiant Capital at 14.32% APY** on USDC (high risk, lower TVL of $280M).\n\n**Best Moderate Risk Yield:** **Stargate on Arbitrum at 8.72% APY** on USDC (medium risk, $420M TVL) or **Yearn Finance at 7.34% APY** on Ethereum (medium risk, $892M TVL).\n\n**Professional Recommendation:** If risk-averse, Aave V3's 5.82% is optimal. If seeking higher returns, Stargate (8.72%) or Yearn (7.34%) offer reasonable risk-adjusted alternatives before moving to high-risk strategies.",
+      "timestamp": "2026-04-13T21:15:39.985Z"
+    },
+    {
+      "id": "tx-ba3aacf6-bbbc-48c9-b091-54720a3cbb00",
+      "datasetId": "ds-003-defi-yields",
+      "txHash": "abc71e5d27dc1831b6a987d54291a69877d59870e7ba706f464a8d051b588640",
+      "amount": 0.02,
+      "buyerQuery": "what is the safest yield?",
+      "aiSummary": "# On-Chain Yield Analysis Report\n**Hazina Data Escrow | April 8, 2026**\n\n---\n\n## Executive Summary\n\nEthereum dominates the yield landscape with lower-risk stablecoin opportunities averaging 6.32% APY, led by Aave V3's 5.82% on $8.4B TVL, while higher-risk protocols on alternative chains (GMX at 18.24%, Radiant Capital at 14.32%) offer substantially elevated returns. Risk-adjusted analysis reveals a significant APY ceiling around 7-8% for \"low\" risk protocols, with yields above this threshold consistently paired with medium-to-high risk classifications. The data shows clear risk stratification: stable assets yield 4-6%, mainstream protocols 5-7%, and speculative positions exceed 12%.\n\n---\n\n## What is the Safest Yield?\n\n**Aave V3 on Ethereum (USDC, 5.82% APY)** represents the safest yield option in this dataset.\n\n**Why this is the safest choice:**\n\n| Factor | Details |\n|--------|---------|\n| **Risk Classification** | Low |\n| **Largest TVL** | $8.42B (most capital deployed = battle-tested security) |\n| **Protocol Type** | Battle-hardened lending protocol; oldest audited architecture |\n| **Asset Type** | USDC on Ethereum (most liquid, least counterparty risk) |\n| **Competitive Rate** | 5.82% is only 0.58% below the highest low-risk option (Morpho Blue at 6.42%), but with significantly more liquidity and proven track record |\n\n**Runner-up alternative:** If you prioritize maximum safety over marginal yield gains, **Compound V3** (5.24%, $3.18B TVL) is nearly identical in risk profile but slightly lower yield. **Lido** (3.98% staking) offers institutional-grade safety but with lower returns and ETH-specific exposure.\n\n**Avoid if prioritizing safety:** Anything rated \"high\" risk (GMX, Radiant Capital, Beefy Finance) or with TVL under $500M, despite their 12%+ APY offerings.",
+      "timestamp": "2026-04-13T21:33:48.355Z"
     }
   ]
 }

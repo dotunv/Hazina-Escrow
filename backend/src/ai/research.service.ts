@@ -75,7 +75,7 @@ Respond ONLY with valid JSON in this exact shape (no markdown fences):
 }`;
 
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-6',
+    model: 'claude-3-haiku-20240307',
     max_tokens: 2048,
     messages: [{ role: 'user', content: prompt }],
   });
@@ -88,8 +88,12 @@ Respond ONLY with valid JSON in this exact shape (no markdown fences):
   // Strip any accidental markdown fences
   const cleaned = raw.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
 
-  const parsed = JSON.parse(cleaned) as ResearchReport;
-  return parsed;
+  try {
+    const parsed = JSON.parse(cleaned) as ResearchReport;
+    return parsed;
+  } catch {
+    throw new Error(`AI returned invalid JSON. Raw response: ${cleaned.slice(0, 200)}`);
+  }
 }
 
 /**

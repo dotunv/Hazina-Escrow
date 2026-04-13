@@ -8,6 +8,7 @@ import {
 } from '../common/storage';
 import { verifyStellarPayment } from './stellar.service';
 import { generateDataSummary } from '../ai/claude.service';
+import { sendUsdcPayment } from '../agent/agent.wallet';
 
 export const paymentsRouter = Router();
 
@@ -82,10 +83,25 @@ paymentsRouter.post('/verify/:id', async (req: Request, res: Response) => {
       summary = 'Data delivered successfully. AI summary temporarily unavailable.';
     }
 
+    // Forward 95% to seller on-chain
+    let sellerTxHash: string | undefined;
+    const sellerAmount = parseFloat((dataset.pricePerQuery * 0.95).toFixed(7));
+    try {
+      const payment = await sendUsdcPayment({
+        destinationAddress: dataset.sellerWallet,
+        amount: sellerAmount.toFixed(7),
+        memo: `hazina-${dataset.id.slice(0, 10)}`,
+      });
+      sellerTxHash = payment.txHash;
+      console.log(`[Escrow] Paid seller ${sellerAmount} USDC → ${dataset.sellerWallet} (${sellerTxHash})`);
+    } catch (payErr) {
+      console.warn('[Escrow] Seller payment failed (data still delivered):', payErr instanceof Error ? payErr.message : payErr);
+    }
+
     // Update dataset stats
     updateDataset(dataset.id, {
       queriesServed: dataset.queriesServed + 1,
-      totalEarned: parseFloat((dataset.totalEarned + dataset.pricePerQuery * 0.95).toFixed(4)),
+      totalEarned: parseFloat((dataset.totalEarned + sellerAmount).toFixed(4)),
     });
 
     // Log transaction
@@ -106,8 +122,9 @@ paymentsRouter.post('/verify/:id', async (req: Request, res: Response) => {
       transaction: {
         hash: txHash,
         amount: dataset.pricePerQuery,
-        sellerReceived: parseFloat((dataset.pricePerQuery * 0.95).toFixed(4)),
+        sellerReceived: sellerAmount,
         platformFee: parseFloat((dataset.pricePerQuery * 0.05).toFixed(4)),
+        sellerTxHash: sellerTxHash ?? null,
       },
     });
   } catch (err) {
@@ -129,7 +146,8 @@ paymentsRouter.post('/verify/:id/demo', async (req: Request, res: Response) => {
     const result = await generateDataSummary(dataset.data, buyerQuestion);
     summary = result.summary;
     answer = result.answer;
-  } catch {
+  } catch (err) {
+    console.error('Demo mode AI error:', err);
     summary = 'Demo mode: AI summary unavailable. Set ANTHROPIC_API_KEY to enable.';
   }
 
