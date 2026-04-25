@@ -4,9 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 initializeDatadog();
 
-import express from 'express';
+import express, { Request } from 'express';
 import cors from 'cors';
 import path from 'path';
+import rateLimit from 'express-rate-limit';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJsdoc from 'swagger-jsdoc';
 
@@ -15,7 +16,6 @@ import { paymentsRouter } from './payments/payments.router';
 import { agentRouter } from './agent/agent.router';
 import { webhooksRouter } from './webhooks/webhook.router';
 import { readStore } from './common/storage';
-import { rateLimitMiddleware } from './common/rateLimit';
 import { BackupScheduler } from './common/backup.scheduler';
 import { backupRouter, setBackupScheduler } from './common/backup.router';
 
@@ -25,8 +25,44 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5173" }));
 app.use(express.json({ limit: "10mb" }));
 
-// Apply rate limiting to all API routes
-app.use('/api', rateLimitMiddleware);
+// Rate limiting — global + per-route limits for sensitive endpoints
+const FIFTEEN_MINUTES_MS = 15 * 60 * 1000;
+const ONE_HOUR_MS = 60 * 60 * 1000;
+
+const isDemoRoute = (req: Request): boolean =>
+  req.originalUrl.split('?')[0].endsWith('/demo');
+
+const globalLimiter = rateLimit({
+  windowMs: FIFTEEN_MINUTES_MS,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests' },
+});
+
+const strictLimiter = rateLimit({
+  windowMs: FIFTEEN_MINUTES_MS,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  skip: isDemoRoute,
+  message: { error: 'Too many requests' },
+});
+
+const demoLimiter = rateLimit({
+  windowMs: ONE_HOUR_MS,
+  max: 30,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests' },
+});
+
+// Demo limiters first (more specific), then strict, then global on /api
+app.use('/api/verify/:id/demo', demoLimiter);
+app.use('/api/agent/research/demo', demoLimiter);
+app.use('/api/verify', strictLimiter);
+app.use('/api/agent/research', strictLimiter);
+app.use('/api', globalLimiter);
 
 // Initialize backup scheduler
 const backupEnabled = process.env.BACKUP_ENABLED !== 'false';
