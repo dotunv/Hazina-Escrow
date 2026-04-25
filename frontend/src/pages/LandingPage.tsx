@@ -110,16 +110,32 @@ export default function LandingPage() {
   const [featured, setFeatured] = useState<DatasetMeta[]>([]);
   const [featuredLoading, setFeaturedLoading] = useState(true);
   const [loaded, setLoaded] = useState(false);
+  const [statsError, setStatsError] = useState<string | null>(null);
+  const [featuredError, setFeaturedError] = useState<string | null>(null);
 
   useEffect(() => {
     api
       .getStats()
-      .then(setStats)
-      .catch(() => {});
+      .then((data) => {
+        setStats(data);
+        setStatsError(null);
+      })
+      .catch((err: unknown) => {
+        setStatsError(
+          err instanceof Error ? err.message : "Failed to load statistics.",
+        );
+      });
     api
       .getDatasets()
-      .then((ds) => setFeatured(ds.slice(0, 3)))
-      .catch(() => {})
+      .then((ds) => {
+        setFeatured(ds.slice(0, 3));
+        setFeaturedError(null);
+      })
+      .catch((err: unknown) => {
+        setFeaturedError(
+          err instanceof Error ? err.message : "Failed to load featured datasets.",
+        );
+      })
       .finally(() => setFeaturedLoading(false));
     const timer = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(timer);
@@ -208,6 +224,13 @@ export default function LandingPage() {
               <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
+
+          {/* Stats error notice */}
+          {statsError && (
+            <p className="text-xs text-red-400 font-body text-center mb-2 opacity-75">
+              {statsError}
+            </p>
+          )}
 
           {/* Stats bar */}
           <div className="flex flex-wrap justify-center gap-4">
@@ -376,8 +399,17 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* Featured datasets error notice */}
+      {featuredError && (
+        <section className="py-6">
+          <div className="max-w-6xl mx-auto px-4 text-center">
+            <p className="text-sm text-red-400 font-body opacity-75">{featuredError}</p>
+          </div>
+        </section>
+      )}
+
       {/* ── FEATURED DATASETS ── */}
-      {(featuredLoading || featured.length > 0) && (
+      {!featuredError && (featuredLoading || featured.length > 0) && (
         <section className="py-24 relative">
           <div className="absolute inset-0 pattern-dense" />
           <div className="relative max-w-6xl mx-auto px-4">
