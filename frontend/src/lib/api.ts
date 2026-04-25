@@ -151,6 +151,69 @@ async function fetchWithTimeout(url: string, options?: RequestOptions): Promise<
   }
 }
 
+// ── Runtime response validation ────────────────────────────────────────────
+// Lightweight guards that validate critical API response shapes at runtime.
+// They throw a descriptive ApiValidationError when the server returns
+// unexpected data, preventing silent undefined/null crashes downstream.
+
+export class ApiValidationError extends Error {
+  constructor(
+    message: string,
+    public readonly field?: string,
+  ) {
+    super(message);
+    this.name = "ApiValidationError";
+  }
+}
+
+function assertString(value: unknown, field: string): asserts value is string {
+  if (typeof value !== "string") {
+    throw new ApiValidationError(`Expected string for "${field}", got ${typeof value}`, field);
+  }
+}
+
+function assertNumber(value: unknown, field: string): asserts value is number {
+  if (typeof value !== "number" || !Number.isFinite(value)) {
+    throw new ApiValidationError(`Expected finite number for "${field}", got ${typeof value}`, field);
+  }
+}
+
+function assertArray(value: unknown, field: string): asserts value is unknown[] {
+  if (!Array.isArray(value)) {
+    throw new ApiValidationError(`Expected array for "${field}", got ${typeof value}`, field);
+  }
+}
+
+function assertObject(value: unknown, field: string): asserts value is Record<string, unknown> {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    throw new ApiValidationError(`Expected object for "${field}", got ${typeof value}`, field);
+  }
+}
+
+/** Validate a Stats object from the API. */
+function validateStats(raw: unknown): Stats {
+  assertObject(raw, "stats");
+  assertNumber(raw.totalDatasets, "stats.totalDatasets");
+  assertNumber(raw.totalQueries, "stats.totalQueries");
+  assertNumber(raw.totalUsdcEarned, "stats.totalUsdcEarned");
+  assertNumber(raw.totalTransactions, "stats.totalTransactions");
+  return raw as unknown as Stats;
+}
+
+/** Validate a DatasetMeta object from the API. */
+function validateDataset(raw: unknown, index?: number): DatasetMeta {
+  const label = index !== undefined ? `dataset[${index}]` : "dataset";
+  assertObject(raw, label);
+  assertString(raw.id, `${label}.id`);
+  assertString(raw.name, `${label}.name`);
+  assertString(raw.type, `${label}.type`);
+  assertNumber(raw.pricePerQuery, `${label}.pricePerQuery`);
+  assertString(raw.sellerWallet, `${label}.sellerWallet`);
+  return raw as unknown as DatasetMeta;
+}
+
+// ── HTTP helper ────────────────────────────────────────────────────────────
+
 async function request<T>(url: string, options?: RequestOptions): Promise<T> {
   const res = await fetchWithTimeout(url, options);
   if (!res.ok) {
@@ -178,11 +241,18 @@ export const api = {
     }
     const query = searchParams.toString();
     const url = `${BASE}/datasets${query ? `?${query}` : ''}`;
-    return request<PaginatedDatasets>(url);
+    return request<PaginatedDatasets>(url).then((r) => {
+      // Validate individual dataset items to catch malformed API responses.
+      assertArray(r.data, "datasets.data");
+      r.data = r.data.map((item, i) => validateDataset(item, i));
+      return r;
+    });
   },
 
   getStats: () =>
-    request<{ success: boolean; stats: Stats }>(`${BASE}/datasets/stats`).then((r) => r.stats),
+    request<{ success: boolean; stats: unknown }>(`${BASE}/datasets/stats`).then((r) =>
+      validateStats(r.stats),
+    ),
 
   getDataset: (id: string) =>
     request<{ success: boolean; dataset: DatasetMeta }>(`${BASE}/datasets/${id}`).then(
